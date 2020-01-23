@@ -15,6 +15,8 @@ class CreateSukasTable extends Migration
     {
         Schema::create('sukas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('reply_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
