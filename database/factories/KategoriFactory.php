@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model\Kategory;
+use App\Model\Kategori;
 use Faker\Generator as Faker;
 
-$factory->define(Kategory::class, function (Faker $faker) {
+$factory->define(Kategori::class, function (Faker $faker) {
     return [
         //
     ];

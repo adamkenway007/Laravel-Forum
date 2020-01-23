@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Kategory;
+use App\Model\Kategori;
 use Illuminate\Http\Request;
 
-class KategoryController extends Controller
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class KategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\Kategory  $kategory
+     * @param  \App\Model\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function show(Kategory $kategory)
+    public function show(Kategori $kategori)
     {
         //
     }
@@ -52,10 +52,10 @@ class KategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Model\Kategory  $kategory
+     * @param  \App\Model\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategory $kategory)
+    public function edit(Kategori $kategori)
     {
         //
     }
@@ -64,10 +64,10 @@ class KategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\Kategory  $kategory
+     * @param  \App\Model\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategory $kategory)
+    public function update(Request $request, Kategori $kategori)
     {
         //
     }
@@ -75,10 +75,10 @@ class KategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\Kategory  $kategory
+     * @param  \App\Model\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategory $kategory)
+    public function destroy(Kategori $kategori)
     {
         //
     }
