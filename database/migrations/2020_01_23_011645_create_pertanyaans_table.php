@@ -15,6 +15,11 @@ class CreatePertanyaansTable extends Migration
     {
         Schema::create('pertanyaans', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('slug');
+            $table->text('body');
+            $table->integer('category_id')->usigned();
+            $table->integer('user_id')->usigned();
             $table->timestamps();
         });
     }
