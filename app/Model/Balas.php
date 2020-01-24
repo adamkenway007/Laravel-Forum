@@ -16,8 +16,8 @@ class Balas extends Model
 		return $this->belongsTo(User::class);
     }
 
-    public function like()
+    public function suka()
     {
-		return $this->hasMany(Like::class);
+		return $this->hasMany(Suka::class);
     }
 }
