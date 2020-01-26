@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Model\Pertanyaan;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+use App\Http\Resources\PertanyaanResource;
+
 
 class PertanyaanController extends Controller
 {
@@ -14,18 +17,9 @@ class PertanyaanController extends Controller
      */
     public function index()
     {
-        //
+        return PertanyaanResource::collection(Pertanyaan::latest()->get());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -35,8 +29,12 @@ class PertanyaanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // auth()->user()->pertanyaan()->create($request->all());
+        Pertanyaan::create($request->all());
+        return response('Created', Response::HTTP_CREATED);
     }
+
+
 
     /**
      * Display the specified resource.
@@ -46,22 +44,12 @@ class PertanyaanController extends Controller
      */
     public function show(Pertanyaan $pertanyaan)
     {
-        //
+        // return $pertanyaan;
+        return new PertanyaanResource($pertanyaan);
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Model\Pertanyaan  $pertanyaan
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Pertanyaan $pertanyaan)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * Update the specified resource in                                       storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Model\Pertanyaan  $pertanyaan
@@ -69,7 +57,8 @@ class PertanyaanController extends Controller
      */
     public function update(Request $request, Pertanyaan $pertanyaan)
     {
-        //
+        $pertanyaan->update($request->all());
+        return response('Update', Response::HTTP_ACCEPTED);
     }
 
     /**
@@ -80,6 +69,7 @@ class PertanyaanController extends Controller
      */
     public function destroy(Pertanyaan $pertanyaan)
     {
-        //
+        $pertanyaan->delete();
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }
