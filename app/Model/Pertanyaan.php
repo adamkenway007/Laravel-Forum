@@ -12,8 +12,6 @@ class Pertanyaan extends Model
 		return 'slug';
 	}
 
-	// protected $fillable = ['title','slug','body','category_id','user_id'];
-
 	protected $guarded = [];
 	
 
