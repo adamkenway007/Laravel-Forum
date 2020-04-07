@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Balas;
+use App\Model\Pertanyaan;
 use Illuminate\Http\Request;
+// use App\Http\Resources\BalasResource;
+use Symfony\Component\HttpFoundation\Response;
+
 
 class BalasController extends Controller
 {
@@ -11,9 +16,19 @@ class BalasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Pertanyaan $pertanyaan, Balas $balas)
     {
-        //
+        // return BalasResource::collection($pertanyaan->balas);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //  
     }
 
     /**
@@ -22,20 +37,24 @@ class BalasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Pertanyaan $pertanyaan, Request $request)
     {
-        //
+        $balas = $pertanyaan->balas()->create($request->all());
+        return response(['balas' => $balas], Response::HTTP_CREATED);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Model\Balas $balas
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Pertanyaan $pertanyaan, Balas $balas)
     {
-        //
+        dd($balas);
+        // return ;
+        // return new BalasResource(Balas::find($balas));
+        // return new BalasResource($balas);
     }
 
     /**

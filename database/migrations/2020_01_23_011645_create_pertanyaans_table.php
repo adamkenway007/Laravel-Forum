@@ -18,7 +18,7 @@ class CreatePertanyaansTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('body');
-            $table->integer('category_id')->usigned();
+            $table->integer('kategori_id')->usigned();
             $table->integer('user_id')->usigned();
             $table->timestamps();
         });
