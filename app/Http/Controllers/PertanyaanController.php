@@ -17,6 +17,7 @@ class PertanyaanController extends Controller
      */
     public function index()
     {
+        // return Pertanyaan::latest()->get();
         return PertanyaanResource::collection(Pertanyaan::latest()->get());
     }
 

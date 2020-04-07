@@ -15,4 +15,5 @@ use Illuminate\Http\Request;
 
 Route::apiResource('/pertanyaan', 'PertanyaanController');
 Route::apiResource('/kategori', 'KategoriController');
+Route::apiResource('/pertanyaan/{pertanyaan}/balas', 'BalasController');
 

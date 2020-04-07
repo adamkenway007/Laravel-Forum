@@ -2,8 +2,8 @@
 
 namespace App\Model;
 
-use App\User;
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Pertanyaan extends Model
 {
@@ -27,7 +27,7 @@ class Pertanyaan extends Model
 
     public function kategori() 
     {
-    	return $this->hasMany(Kategori::class);
+    	return $this->belongsTo(Kategori::class);
     }
 
     public function getPathAttribute()

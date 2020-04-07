@@ -16,9 +16,9 @@ class CreateBalasTable extends Migration
         Schema::create('balas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('body');
-            $table->bigInteger('question_id')->unsigned();
+            $table->bigInteger('pertanyaan_id')->unsigned();
             $table->integer('user_id');
-            $table->foreign('question_id')->references('id')->on('pertanyaans')->onDelete('cascade');
+            $table->foreign('pertanyaan_id')->references('id')->on('pertanyaans')->onDelete('cascade');
             $table->timestamps();
         });
     }

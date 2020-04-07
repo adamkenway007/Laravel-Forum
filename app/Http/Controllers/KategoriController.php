@@ -16,7 +16,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        return kategori::latest()->get();
+        // return kategori::latest()->get();
+        return KategoriResource::collection(kategori::latest()->get());
     }
 
 
@@ -44,7 +45,8 @@ class KategoriController extends Controller
      */
     public function show(Kategori $kategori)
     {
-        return $kategori;
+        // return $kategori;
+        return new KategoriResource($kategori);
     }
 
     /**

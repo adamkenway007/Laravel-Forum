@@ -2,10 +2,14 @@
 
 namespace App\Model;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Balas extends Model
 {
+
+    protected $guarded = [];
+
     public function pertanyaan()
     {
 		return $this->belongsTo(Pertanyaan::class);
